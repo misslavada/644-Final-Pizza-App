@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Bellota+Text&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="script.css">
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row header">
+            <div class="col-6">
+                <h1>Tiffany's Pizza Palace</h1>
+            </div>
+            <div class="col-6">
+                <h2>"We do the pizza thing <br> you eat the pizza thing!"</h2>
+            </div>
+        </div>
+    </div>
+    <br>
+    <!--ORDERING SECTION-->
+    <div class="container-fluid">
+        <div class="ordering">
+            <h2>Crusts</h2><br>
+            
+        <!--Hand Tossed-->
+            <div class="row crusts">
+            <div class="custom-control custom-radio" id="handToss">
+                <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                <label class="custom-control-label" for="customRadio1">
+                    <h4>Hand Tossed</h4>
+                </label>
+            </div> 
+            <div class="custom-control custom-radio" id="thinCrust">
+                <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                <label class="custom-control-label" for="customRadio2">
+                    <h4>Thin Crust</h4>
+                </label>
+            </div>
+            <div class="custom-control custom-radio" id="newYork">
+                <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
+                <label class="custom-control-label" for="customRadio3">
+                    <h4>New York Style</h4>
+                </label>
+            </div>
+            <div class="custom-control custom-radio" id="glutenFree">
+                <input type="radio" id="customRadio4" name="customRadio" class="custom-control-input">
+                <label class="custom-control-label" for="customRadio4">
+                    <h4>Gluten Free</h4>
+                </label>
+            </div>
+        </div>
+        <!--drop downs for each crust-->
+        <div id="dropDowns">
+            <form class="crusts">
+            <!-- hand tossed -->
+            <div class="dropHandToss" style="display: none">   
+                <select class="custom-select hand price">
+                    <option selected> - Select - </option>
+                    <option value="1">Small: $9.99</option>
+                    <option value="2">Medium: $12.99</option>
+                    <option value="3">Large: $14.99</option>
+                </select>
+            </div>
+            <!--Thin Crust-->
+            <div class="dropThinCrust" style="display: none"> 
+                <select class="custom-select thin price">
+                    <option selected> - Select - </option>
+                    <option value="1">Medium: $11.99</option>
+                    <option value="2">Large: $13.99</option>
+                </select>
+            </div>
+           <!-- NYC -->
+            <div class="dropNY" style="display: none">
+                <select class="custom-select nyc price">
+                    <option selected> - Select - </option>
+                    <option value="1">Large: $16.99</option>
+                    <option value="2">Extra Large: $19.99</option>
+                </select>
+            </div>
+            <!-- gfree -->
+            <div class="dropGFree" style="display: none">
+                <select class="custom-select gfree price">
+                    <option selected> - Select - </option>
+                    <option value="1">Small: $10.99</option>
+                </select>
+            </div>
+            </form>
+        </div>
+        <br><br>
+        <!--Cheese Selection-->
+        <div class="cheese">
+            <h2>Cheese Options</h2>
+            <select class="custom-select">
+                <option selected>Normal: no charge</option>
+                <option value="1">Light: no charge</option>
+                <option value="2">Extra Cheese: +$2.99</option>
+                <option value="3">Double Cheese: +$3.99</option>
+            </select>
+        </div>
+        <br><br>
+
+        <br>
+        <!--sauce type -->
+        <div id="saucetable">
+            <div class="sauce">
+                <h2>Sauce</h2>
+                <select class="custom-select">
+                    <option selected>Tomato - no charge</option>
+                    <option value="1">Hearty Tomato: +$.99</option>
+                    <option value="2">BBQ Sauce: +$1.99</option>
+                </select>
+            </div>
+        </div>
+        <br>
+        <!--toppings-->
+        <div id="toppings">
+            <div class="toppings">
+                <h2>Additional Toppings ($0.99/ea)</h2>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                    <label class="custom-control-label" for="customCheck1">pepperoni</label>
+                </div>
+
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="customCheck2">
+                    <label class="custom-control-label" for="customCheck2">sausage</label>
+                </div>
+
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="customCheck3">
+                    <label class="custom-control-label" for="customCheck3">ham</label>
+                </div>
+
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="customCheck4">
+                    <label class="custom-control-label" for="customCheck4">bacon</label>
+                </div>
+
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="customCheck5">
+                    <label class="custom-control-label" for="customCheck5">salami</label>
+                </div>
+
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="customCheck6">
+                    <label class="custom-control-label" for="customCheck6">peppers</label>
+                </div>
+
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="customCheck7">
+                    <label class="custom-control-label" for="customCheck7">olives</label>
+                </div>
+
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="customCheck8">
+                    <label class="custom-control-label" for="customCheck8">jalapenos</label>
+                </div>
+
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="customCheck9">
+                    <label class="custom-control-label" for="customCheck9">shrooms</label>
+                </div>
+
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="customCheck10">
+                    <label class="custom-control-label" for="customCheck10">pineapple</label>
+                </div>
+
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="customCheck11">
+                    <label class="custom-control-label" for="customCheck11">onions</label>
+                </div>
+                </br>
+            </div>
+        </div>
+    </div>
+    <button type="btn" class="box" id="completeOrder">Finished Building Pizza</button>
+    </div> 
+    <br>   
+    <div class="currentOrder">Your current order: </div>
+    <div class="orderTotal">Total Due: </div>    
+
+    <!--DELIVERY SECTION-->
+    <div class="delivery">
+        <form id="deliveryAddr">
+            <h3>Delivery Address</h3>
+
+            <div class="form-row">
+                <div class="form-group col-12">
+                    <label for="name">Name</label>
+                    <input type="text" name='name' class="form-control" id="fullName" placeholder="Full Name">
+                    <div id="nameError"></div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-9">
+                    <label for="inputAddress">Street Address</label>
+                    <input type="text" name="address" class="form-control notincl" id="address"
+                        placeholder="123 Fake St">
+                </div>
+                <div class="form-group col-3">
+                    <label for="apt-ste">Apt or Ste #</label>
+                    <input type="text" name='apt' class="form-control notincl" id="aptOrSte">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-3">
+                    <label for="home-type">Type of Home</label>
+                    <select id="home" class="form-control notincl">
+                        <option value="House">House</option>
+                        <option value="Apartment">Apartment</option>
+                        <option value="Business">Business</option>
+                        <option value="Campus">Campus</option>
+                        <option value="Hotel">Hotel</option>
+                        <option value="Dorm">Dorm</option>
+                        <option value="Other...">Other</option>
+                    </select>
+                </div>
+                <div class="hiddenother" id="other">
+                    <label for="home-input">If other, please specify</label>
+                    <input type="text" name='hometype' id="homeinput" class="form-control notincl">
+                </div>
+                <div class="form-group col-auto">
+                    <label for="inputCity">City</label>
+                    <input type="text" class="form-control" id="inputCity">
+                </div>
+                <div class="form-group col-auto">
+                    <label for="inputState">State</label>
+                    <input type="text" name='statetype' id='state' class="form-control">
+                </div>
+                <div class="form-group col-auto">
+                    <label for="inputZip">Zip</label>
+                    <input type="text" class="form-control" id="inputZip">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-6">
+                    <label for="inputEmail">Email</label>
+                    <input type="text" name="email" class="form-control" id="email" placeholder="email@domain.com">
+                </div>
+
+                <div class="form-group col-6 phone">
+                    <label for="inputPhone">Phone Number</label>
+                    <input type="text" name='phone' class="form-control" id="phone" placeholder="555-555-5555">
+                    <div class="phoneError"></div>
+                </div>
+            </div>
+
+        </form>
+        <br>
+        <div class="deliveryBtns">
+            <button type="submit" class="btn btn-primary" id='deliveryBtn1'>Enter Payment</button>
+
+            <button type="text" class="btn btn-primary" id='deliveryBtn2'>See My Total</button>
+        </div>
+    </div>
+
+    </div>
+    <br><br>
+
+
+
+    <!--PAYMENT SECTION-->
+    <div class="paymentForm">
+            <form id="paymentInfo" action="" class="payment">
+                <h3>Payment Information:</h3>
+                <div class="form-row">
+                    <div class="form-group col-5">
+                        <label for="ccn">Credit Card Number:</label>
+                        <input type="text" id="ccn" class="form-control"><br>
+                    </div>
+
+                    <div class="form-group col-2">
+                        <label for="cvv">CVV</label>
+                        <input type="text" id="cvc" class="form-control">
+                    </div>    
+                
+
+                <div class="form-group col-auto">
+                    <label>Expiration Date:</label>
+                    <select class="form-control" id="ex-month">
+                        <option value="jan">January</option>
+                        <option value="feb">February</option>
+                        <option value="mar">March</option>
+                        <option value="apr">April</option>
+                        <option value="may">May</option>
+                        <option value="jun">June</option>
+                        <option value="jul">July</option>
+                        <option value="aug">August</option>
+                        <option value="sept">September</option>
+                        <option value="oct">October</option>
+                        <option value="nov">November</option>
+                        <option value="dec">December</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-auto">
+                    <select class="form-control" id="ex-year" style="margin-top: 2em;">
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                    </select>
+                </div>
+            </div>
+            
+        </form> 
+            
+            <form id="paymentAddr">
+                <h3>Payment Address</h3>
+                <div class="form-group">
+                    <div class="form-check checkBox">
+                        <input class="form-check-input" type="checkbox" id="checkBox">
+                        <label class="form-check-label" for="sameaswhere-checkbox">
+                            <h6>(billing same as delivery address?)</h6>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="name2">Name</label>
+                        <input type="text" name="name" class="form-control" id="fullName2" placeholder="Full Name">
+                        <div id="nameError2"></div>
+                        <!--empty div for name reqd message-->
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-9">
+                        <label for="inputAddress">Street Address</label>
+                        <input type="text" name="address" class="form-control notincl" id="address2"
+                            placeholder="123 Fake St">
+                    </div>
+                    <div class="form-group col-3">
+                        <label for="apt-ste">Apt or Ste #</label>
+                        <input type="text" name='apt' class="form-control notincl" id="aptOrSte2">
+                    </div>
+                </div>
+                <div class="form-row">
+                        <div class="form-group col-3">
+                            <label for="home-type">Type of Home</label>
+                            <select id="home2" class="form-control notincl">
+                                <option value="House">House</option>
+                                <option value="Apartment">Apartment</option>
+                                <option value="Business">Business</option>
+                                <option value="Campus">Campus</option>
+                                <option value="Hotel">Hotel</option>
+                                <option value="Dorm">Dorm</option>
+                                <option value="Other...">Other</option>
+                            </select>
+                        </div>
+                        <div class="hiddenother2" id="other2">
+                            <label for="home-input">If other, please specify</label>
+                            <input type="text" name='hometype' id="homeinput2" class="form-control notincl">
+                        </div>
+                        <div class="form-group col-auto">
+                            <label for="inputCity">City</label>
+                            <input type="text" class="form-control" id="inputCity2">
+                        </div>
+                        <div class="form-group col-auto">
+                            <label for="inputState">State</label>
+                            <input type="text" name='statetype' id='state2' class="form-control">
+                        </div>
+                        <div class="form-group col-auto">
+                            <label for="inputZip">Zip</label>
+                            <input type="text" class="form-control" id="inputZip2">
+                        </div>
+                    </div>
+                <br><br>
+
+            </form>
+            <div class="currentOrder">Your current order:</div>
+            <div class="orderTotal">Total Due: </div>
+            <div class="paymentBtn">
+                <button type="submit" class="btn btn-primary" id='paymentBtn'>Pay Now</button>
+                <button type="text" class="btn btn-primary" id='paymentBtn2'>TOTAL</button>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+        </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+        </script>
+    <script src="script.js"></script>
+</body>
+<footer></footer>
+</html>
