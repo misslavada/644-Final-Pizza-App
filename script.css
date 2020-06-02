@@ -5,7 +5,10 @@ body {
 	margin: auto;
 }
 .header {
-	margin:30px;
+	background-image: url('/images/800px-Pizza-3007395.jpg');
+	min-height: 200px;
+	width: auto;
+	color: beige;
 }
 footer {
 	height:100px;
@@ -22,4 +25,17 @@ footer {
 .orderTotal {
 	font-size: 2rem;
 	padding-bottom: 10px;
+}
+.thankYou {
+	font-family: 'Bellota Text', cursive;
+	font-size: 2rem;
+	text-align: center;
+}
+.pizzaName {
+	padding-left: 20px;
+	text-shadow: 3px 3px #2b2c27;
+}
+.slogan {
+	padding-left: 40px;
+	text-shadow: 3px 3px #2b2c27;
 }

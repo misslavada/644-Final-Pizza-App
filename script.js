@@ -70,8 +70,8 @@ $(document).ready((e) => {
     let zip2 = document.querySelector('#inputZip2');
     let ccn = document.querySelector('#ccn');
     let cvv = document.querySelector('#cvv');
-    let paymentAddr = document.forms.paymentAddr;
-
+    // let paymentAddr = document.forms.paymentAddr;
+    let check = false;
     //hidden other for home type
     $('#other').hide();
     let homeType = document.querySelector('#other');
@@ -145,62 +145,86 @@ $(document).ready((e) => {
         $('#fullName2').val($('#fullName').val());
         $('#address2').val($('#address').val());
         $('#aptOrSte2').val($('#aptOrSte').val());
-        $('#inputCity2').val($('#inputcity').val());
+        $('#inputCity2').val($('#inputCity').val());
         $('#state2').val($('#state').val());
-        $('#inputZip').val($('#input').val());
+        $('#inputZip2').val($('#inputZip').val());
     });
 
-    
-    //need event listener for each selection in ordering, possible move up to ordering section??
-    let selectedCrust = document.querySelectorAll('.custom-radio');
-    let check = false;
+    //need event listener for each selection in ordering
+        $('.ordering').click((e) =>{
+            console.log("lasdkfjsldkjf");
 
-    function addTotals(){
-        let toppingCost = totalToppings * .99;
-        let endPrice = crustPrice + cheesePrice + saucePrice + toppingCost;
-        $('#total').text(endPrice.toFixed(2));
-    }
+        })
+
+    // function addTotals(){
+    //     let toppingCost = totalToppings * .99;
+    //     let endPrice = crustPrice + cheesePrice + saucePrice + toppingCost;
+    //     $('#total').text(endPrice.toFixed(2));
+    // }
     
+
+
     let crustPrice = 0.00; //begin with 0
-    let saucePrice = 0.00; //begin with 0
     let cheesePrice = 0.00; //begin with 0
+    let saucePrice = 0.00; //begin with 0
     let totalToppings = 0;
 
     $(':radio').click((e) =>{
         radioId = e.target.id;
         console.log(crust_option = e.target.value);
     }); 
-
-    $(".crust"). change((e) => {
+    $('.price').change((e) => {
+        //Set the global crust price
         crustPrice = Number(e.target.value);
-        crustOption = e.target.id;
-        crustChoice = e.target.selectedIndex;
-        console.log(e.value.innerText);
-    })
-
-    $('#cheese').change((e) => {
+        if (crustPrice > 0) {
+            check = true;
+        } else {
+            check = false;
+        }
+        // clearDropDowns(e);
+        addTotals();
+        console.log(crustPrice);
+    });  
+    
+    $('.cheesePrice').change((e) => {
+        //Set the global crust price
         cheesePrice = Number(e.target.value);
-        cheeseOption = e.target.id;
-        cheeseChoice = e.target.selectedIndex;
+        if (cheesePrice > 0) {
+            check = true;
+        } else {
+            check = false;
+        }
+        // clearDropDowns(e);
         addTotals();
+        console.log(cheesePrice);
     });
-    $('.sauce').change((e) => {
+    $('.saucePrice').change((e) => {
+        //Set the global crust price
         saucePrice = Number(e.target.value);
-        sauceOption = e.target.id;
-        sauceChoice = e.target.selectedIndex;
+        if (saucePrice > 0) {
+            check = true;
+        } else {
+            check = false;
+        }
+        // clearDropDowns(e);
         addTotals();
+        console.log(saucePrice);
     });
+
 
     let toppingsSel= []; //begin with no toppings   
     $('#toppings').click((e) => {
         console.log(e.target.checked);
         if (e.target.checked === undefined){
             console.log(e.target.checked);
+            console.log("goober")
         } else if (e.target.checked === true) {
             toppingsSel.push(e.target.value);
+            console.log("goober2")
         } else {
             let removeItem = toppingsSel.indexOf(e.target.value);
             toppingsSel.splice(removeItem, 1);
+            console.log("goober3")
         }
         totalToppings = $('input:checkbox:checked').length;
         console.log(totalToppings);
@@ -208,19 +232,22 @@ $(document).ready((e) => {
         addTotals();
     }); 
 
-    //showing order on page
+    function addTotals(){
+        let toppingCost = totalToppings * .99;
+        let endPrice = crustPrice + cheesePrice + saucePrice + toppingCost;
+        $('.orderTotal').text("Total Due: $" + endPrice.toFixed(2));
+    }
+    //showing order total on page
     let completeOrder = document.getElementById('completeOrder');
     $(completeOrder).click((e) => {
         console.log(addTotals.value);
     })
-    //showing total on page BUT ITS NOT GAAAAAAAh
 
-
-
-
-
-
-
-
+    let paymentBtn = document.getElementById('paymentBtn');
+    $(paymentBtn).click((e) => {
+        $('.paymentForm').hide();
+        $('#completeOrder').hide();
+        $('.thankYou').text('Thank you for your order!');
+    })
 });
 

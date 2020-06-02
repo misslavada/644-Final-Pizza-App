@@ -16,10 +16,10 @@
 <body>
     <div class="container-fluid">
         <div class="row header">
-            <div class="col-6">
+            <div class="col-7 pizzaName">
                 <h1>Tiffany's Pizza Palace</h1>
             </div>
-            <div class="col-6">
+            <div class="col-5 slogan">
                 <h2>"We do the pizza thing <br> you eat the pizza thing!"</h2>
             </div>
         </div>
@@ -31,7 +31,7 @@
             <h2>Crusts</h2><br>
             
         <!--Hand Tossed-->
-            <div class="row crusts">
+        <div class="row crusts">
             <div class="custom-control custom-radio" id="handToss">
                 <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
                 <label class="custom-control-label" for="customRadio1">
@@ -63,33 +63,33 @@
             <!-- hand tossed -->
             <div class="dropHandToss" style="display: none">   
                 <select class="custom-select hand price">
-                    <option selected> - Select - </option>
-                    <option value="1">Small: $9.99</option>
-                    <option value="2">Medium: $12.99</option>
-                    <option value="3">Large: $14.99</option>
+                    <option selected value ="0.00"> - Select - </option>
+                    <option value="9.99">Small: $9.99</option>
+                    <option value="12.99">Medium: $12.99</option>
+                    <option value="14.99">Large: $14.99</option>
                 </select>
             </div>
             <!--Thin Crust-->
             <div class="dropThinCrust" style="display: none"> 
                 <select class="custom-select thin price">
-                    <option selected> - Select - </option>
-                    <option value="1">Medium: $11.99</option>
-                    <option value="2">Large: $13.99</option>
+                    <option selected value ="0.00"> - Select - </option>
+                    <option value="11.99">Medium: $11.99</option>
+                    <option value="13.99">Large: $13.99</option>
                 </select>
             </div>
            <!-- NYC -->
             <div class="dropNY" style="display: none">
                 <select class="custom-select nyc price">
-                    <option selected> - Select - </option>
-                    <option value="1">Large: $16.99</option>
-                    <option value="2">Extra Large: $19.99</option>
+                    <option selected value ="0.00"> - Select - </option>
+                    <option value="16.99">Large: $16.99</option>
+                    <option value="19.99">Extra Large: $19.99</option>
                 </select>
             </div>
             <!-- gfree -->
             <div class="dropGFree" style="display: none">
                 <select class="custom-select gfree price">
-                    <option selected> - Select - </option>
-                    <option value="1">Small: $10.99</option>
+                    <option selected value ="0.00"> - Select - </option>
+                    <option value="10.99">Small: $10.99</option>
                 </select>
             </div>
             </form>
@@ -98,11 +98,11 @@
         <!--Cheese Selection-->
         <div class="cheese">
             <h2>Cheese Options</h2>
-            <select class="custom-select">
-                <option selected>Normal: no charge</option>
-                <option value="1">Light: no charge</option>
-                <option value="2">Extra Cheese: +$2.99</option>
-                <option value="3">Double Cheese: +$3.99</option>
+            <select class="custom-select cheesePrice">
+                <option selected value ="0.00">Normal: no charge</option>
+                <option value="0.00">Light: no charge</option>
+                <option value="2.99">Extra Cheese: +$2.99</option>
+                <option value="3.99">Double Cheese: +$3.99</option>
             </select>
         </div>
         <br><br>
@@ -112,10 +112,10 @@
         <div id="saucetable">
             <div class="sauce">
                 <h2>Sauce</h2>
-                <select class="custom-select">
-                    <option selected>Tomato - no charge</option>
-                    <option value="1">Hearty Tomato: +$.99</option>
-                    <option value="2">BBQ Sauce: +$1.99</option>
+                <select class="custom-select saucePrice">
+                    <option selected value ="0.00">Tomato - no charge</option>
+                    <option value="0.99">Hearty Tomato: +$.99</option>
+                    <option value="1.99">BBQ Sauce: +$1.99</option>
                 </select>
             </div>
         </div>
@@ -123,7 +123,7 @@
         <!--toppings-->
         <div id="toppings">
             <div class="toppings">
-                <h2>Additional Toppings ($0.99/ea)</h2>
+                <h3>Additional Toppings ($0.99/ea)</h3>
                 <div class="custom-control custom-checkbox">
                     <input type="checkbox" class="custom-control-input" id="customCheck1">
                     <label class="custom-control-label" for="customCheck1">pepperoni</label>
@@ -182,11 +182,12 @@
             </div>
         </div>
     </div>
+    <div class="orderTotal"></div>    
     <button type="btn" class="box" id="completeOrder">Finished Building Pizza</button>
     </div> 
     <br>   
-    <div class="currentOrder">Your current order: </div>
-    <div class="orderTotal">Total Due: </div>    
+    <!-- <div class="currentOrder">Your current order: </div> -->
+    
 
     <!--DELIVERY SECTION-->
     <div class="delivery">
@@ -261,31 +262,29 @@
         <br>
         <div class="deliveryBtns">
             <button type="submit" class="btn btn-primary" id='deliveryBtn1'>Enter Payment</button>
-
-            <button type="text" class="btn btn-primary" id='deliveryBtn2'>See My Total</button>
         </div>
     </div>
 
-    </div>
+ 
     <br><br>
 
 
 
     <!--PAYMENT SECTION-->
     <div class="paymentForm">
-            <form id="paymentInfo" action="" class="payment">
-                <h3>Payment Information:</h3>
-                <div class="form-row">
-                    <div class="form-group col-5">
-                        <label for="ccn">Credit Card Number:</label>
-                        <input type="text" id="ccn" class="form-control"><br>
-                    </div>
+        <form id="paymentInfo" action="" class="payment">
+            <h3>Payment Information:</h3>
+            <div class="form-row">
+                <div class="form-group col-5">
+                    <label for="ccn">Credit Card Number:</label>
+                    <input type="text" id="ccn" class="form-control"><br>
+                </div>
 
-                    <div class="form-group col-2">
-                        <label for="cvv">CVV</label>
-                        <input type="text" id="cvc" class="form-control">
-                    </div>    
-                
+                <div class="form-group col-2">
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvc" class="form-control">
+                </div>    
+            
 
                 <div class="form-group col-auto">
                     <label>Expiration Date:</label>
@@ -317,83 +316,81 @@
                     </select>
                 </div>
             </div>
-            
+        
         </form> 
-            
-            <form id="paymentAddr">
-                <h3>Payment Address</h3>
-                <div class="form-group">
-                    <div class="form-check checkBox">
-                        <input class="form-check-input" type="checkbox" id="checkBox">
-                        <label class="form-check-label" for="sameaswhere-checkbox">
-                            <h6>(billing same as delivery address?)</h6>
-                        </label>
-                    </div>
+        
+        <form id="paymentAddr">
+            <h3>Payment Address</h3>
+            <div class="form-group">
+                <div class="form-check checkBox">
+                    <input class="form-check-input" type="checkbox" id="checkBox">
+                    <label class="form-check-label" for="sameaswhere-checkbox">
+                        <h6>(billing same as delivery address?)</h6>
+                    </label>
                 </div>
-
-                <div class="form-row">
-                    <div class="form-group col-md-12">
-                        <label for="name2">Name</label>
-                        <input type="text" name="name" class="form-control" id="fullName2" placeholder="Full Name">
-                        <div id="nameError2"></div>
-                        <!--empty div for name reqd message-->
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group col-9">
-                        <label for="inputAddress">Street Address</label>
-                        <input type="text" name="address" class="form-control notincl" id="address2"
-                            placeholder="123 Fake St">
-                    </div>
-                    <div class="form-group col-3">
-                        <label for="apt-ste">Apt or Ste #</label>
-                        <input type="text" name='apt' class="form-control notincl" id="aptOrSte2">
-                    </div>
-                </div>
-                <div class="form-row">
-                        <div class="form-group col-3">
-                            <label for="home-type">Type of Home</label>
-                            <select id="home2" class="form-control notincl">
-                                <option value="House">House</option>
-                                <option value="Apartment">Apartment</option>
-                                <option value="Business">Business</option>
-                                <option value="Campus">Campus</option>
-                                <option value="Hotel">Hotel</option>
-                                <option value="Dorm">Dorm</option>
-                                <option value="Other...">Other</option>
-                            </select>
-                        </div>
-                        <div class="hiddenother2" id="other2">
-                            <label for="home-input">If other, please specify</label>
-                            <input type="text" name='hometype' id="homeinput2" class="form-control notincl">
-                        </div>
-                        <div class="form-group col-auto">
-                            <label for="inputCity">City</label>
-                            <input type="text" class="form-control" id="inputCity2">
-                        </div>
-                        <div class="form-group col-auto">
-                            <label for="inputState">State</label>
-                            <input type="text" name='statetype' id='state2' class="form-control">
-                        </div>
-                        <div class="form-group col-auto">
-                            <label for="inputZip">Zip</label>
-                            <input type="text" class="form-control" id="inputZip2">
-                        </div>
-                    </div>
-                <br><br>
-
-            </form>
-            <div class="currentOrder">Your current order:</div>
-            <div class="orderTotal">Total Due: </div>
-            <div class="paymentBtn">
-                <button type="submit" class="btn btn-primary" id='paymentBtn'>Pay Now</button>
-                <button type="text" class="btn btn-primary" id='paymentBtn2'>TOTAL</button>
             </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="name2">Name</label>
+                    <input type="text" name="name" class="form-control" id="fullName2" placeholder="Full Name">
+                    <div id="nameError2"></div>
+                    <!--empty div for name reqd message-->
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-9">
+                    <label for="inputAddress">Street Address</label>
+                    <input type="text" name="address" class="form-control notincl" id="address2"
+                        placeholder="123 Fake St">
+                </div>
+                <div class="form-group col-3">
+                    <label for="apt-ste">Apt or Ste #</label>
+                    <input type="text" name='apt' class="form-control notincl" id="aptOrSte2">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-3">
+                    <label for="home-type">Type of Home</label>
+                    <select id="home2" class="form-control notincl">
+                        <option value="House">House</option>
+                        <option value="Apartment">Apartment</option>
+                        <option value="Business">Business</option>
+                        <option value="Campus">Campus</option>
+                        <option value="Hotel">Hotel</option>
+                        <option value="Dorm">Dorm</option>
+                        <option value="Other...">Other</option>
+                    </select>
+                </div>
+                <div class="hiddenother2" id="other2">
+                    <label for="home-input">If other, please specify</label>
+                    <input type="text" name='hometype' id="homeinput2" class="form-control notincl">
+                </div>
+                <div class="form-group col-auto">
+                    <label for="inputCity">City</label>
+                    <input type="text" class="form-control" id="inputCity2">
+                </div>
+                <div class="form-group col-auto">
+                    <label for="inputState">State</label>
+                    <input type="text" name='statetype' id='state2' class="form-control">
+                </div>
+                <div class="form-group col-auto">
+                    <label for="inputZip">Zip</label>
+                    <input type="text" class="form-control" id="inputZip2">
+                </div>
+            </div>
+            <br><br>
+
+        </form>
+        <!-- <div class="currentOrder">Your current order:</div> -->
+        <div class="orderTotal">Total Due: </div>
+        <div class="paymentBtn">
+            <button type="submit" class="btn btn-primary" id='paymentBtn'>Pay Now</button>
         </div>
+        
     </div>
-    </div>
-</div>
+    <div class="thankYou"></div>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
         </script>
